@@ -9,16 +9,11 @@
 			"name": "checkIn/out",
 			"request": {
 				"auth": {
-					"type": "basic",
-					"basic": [
+					"type": "bearer",
+					"bearer": [
 						{
-							"key": "password",
-							"value": "Basozte0568545931",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "mujahed",
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Im11amFoZWQiLCJleHAiOjE1ODM5NjY3MTAsImVtYWlsIjoibUBtLmNvbSJ9.yBCGnucibCaU5XTH6L2bRD2Q1KBwBlxGVH-BjlP2jzY",
 							"type": "string"
 						}
 					]
@@ -189,6 +184,84 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "request jwt token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "mujahed",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api-token-auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api-token-auth"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Im11amFoZWQiLCJleHAiOjE1ODM5NjY3NjIsImVtYWlsIjoibUBtLmNvbSJ9.8s6S5SZjgxKBquKz748Gvk7sHeJvkxLZxrwSQ21mXrQ}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3d764a3f-7993-4e60-baf3-3af4e56fd4ad",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "51011095-c254-42c6-9a09-1496345353cb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"protocolProfileBehavior": {}
