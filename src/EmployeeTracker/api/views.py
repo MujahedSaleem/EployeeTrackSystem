@@ -2,12 +2,12 @@ from django.contrib.auth.models import User
 from django.db.models import Sum, Q
 from rest_framework.decorators import action
 from rest_framework import status
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from ..models import Attendants, Vacation, Leave
-from .serializers import AttendantSerializer, VacationSerializer, LeaveSerializer
+from .serializers import AttendantSerializer, VacationSerializer, LeaveSerializer, UserSerializer
 from datetime import datetime, timedelta
 
 
@@ -168,3 +168,13 @@ class CreateLeaveEmployee(CreateAPIView):
                 return Response({'error': str(e)})
         else:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+class CreatEployeeAccount(CreateAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all();
+
+
+class RetrieveEployeeAccount(RetrieveAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all();
