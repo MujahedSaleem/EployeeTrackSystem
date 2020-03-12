@@ -9,6 +9,9 @@ from rest_framework.viewsets import ModelViewSet
 from ..models import Attendants, Vacation, Leave
 from .serializers import AttendantSerializer, VacationSerializer, LeaveSerializer, UserSerializer
 from datetime import datetime, timedelta
+from django.contrib.auth import get_user_model  # If used custom user model
+
+UserModel = get_user_model()
 
 
 def subtractTime(inTime, outTime) -> datetime:
@@ -171,10 +174,7 @@ class CreateLeaveEmployee(CreateAPIView):
 
 
 class CreatEployeeAccount(CreateAPIView):
+    model = get_user_model()
     serializer_class = UserSerializer
     queryset = User.objects.all();
-
-
-class RetrieveEployeeAccount(RetrieveAPIView):
-    serializer_class = UserSerializer
-    queryset = User.objects.all();
+    permission_classes = [IsAuthenticated]
