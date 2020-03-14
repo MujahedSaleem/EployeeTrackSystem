@@ -72,12 +72,17 @@ class ListEmployeeAttendant(ModelViewSet):
 
     def makingFunction(self, emp, listAttends, t):
         list = [x for x in listAttends.values('inTime', 'outTime')]
+        xx = datetime.now()
+
         outtime = ""
         for i in range(len(list)):
-            if list[i]['outTime'] != " ":
+            if list[i]['outTime'] is not None:
                 outtime = list[i]['outTime']
             else:
-                list[i]['outTime'] = outtime
+                if outtime != "":
+                    list[i]['outTime'] = outtime
+                else:
+                    list[i]['outTime'] = list[i]['inTime'].__add__(timedelta(hours=8))
         workingHoures = sum([subtractTime(t['inTime'], t['outTime']).hour for t in list])
         return {"EmpName": emp.username, f"workingHoures{t}": workingHoures}
 

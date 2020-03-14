@@ -10,5 +10,6 @@ urlpatterns = [
     path('vacation/<empId>', CreateEmployeeVacation.as_view()),
     path('leave/<empId>', CreateLeaveEmployee.as_view()),
     path('User', CreatEployeeAccount.as_view()),
+
 ]
 urlpatterns += router.urls
