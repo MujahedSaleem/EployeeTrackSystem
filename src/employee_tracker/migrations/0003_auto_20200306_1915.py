@@ -9,13 +9,14 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('EmployeeTracker', '0002_auto_20200306_1717'),
+        ('employee_tracker', '0002_auto_20200306_1717'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='attendants',
+            model_name='Attendant',
             name='emp',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='attendant', to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='attendant',
+                                    to=settings.AUTH_USER_MODEL),
         ),
     ]

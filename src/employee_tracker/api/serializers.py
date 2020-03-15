@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from ..models import Attendants, Vacation, Leave
+from ..models import Attendant, Vacation, Leave
 
 
-class AttendantSerializer(serializers.ModelSerializer):
+class Attendanterializer(serializers.ModelSerializer):
     class Meta:
-        model = Attendants
+        model = Attendant
         fields = '__all__'
 
 

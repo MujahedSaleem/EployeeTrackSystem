@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'rest_auth.registration',
     # local
-    'EmployeeTracker'
+    'employee_tracker'
 ]
 
 MIDDLEWARE = [

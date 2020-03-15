@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('EmployeeTracker', '0003_auto_20200306_1915'),
+        ('employee_tracker', '0003_auto_20200306_1915'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='attendants',
-            name='inTime',
+            model_name='Attendant',
+            name='in_time',
             field=models.DateTimeField(auto_now=True),
         ),
         migrations.AlterField(
-            model_name='attendants',
-            name='outTime',
+            model_name='Attendant',
+            name='out_time',
             field=models.DateTimeField(blank=True, null=True),
         ),
     ]
