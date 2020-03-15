@@ -8,28 +8,27 @@
 		{
 			"name": "checkIn/out",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Im11amFoZWQiLCJleHAiOjE1ODM5NjY3MTAsImVtYWlsIjoibUBtLmNvbSJ9.yBCGnucibCaU5XTH6L2bRD2Q1KBwBlxGVH-BjlP2jzY",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/check/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"check",
+              "auth": {
+                "type": "noauth"
+              },
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Im11amFoZWQiLCJleHAiOjE1ODM5Njc1MDgsImVtYWlsIjoibUBtLmNvbSJ9.y-f-fJU3pvp8__1XAGf14yk2NKBPdM1NQcDeUFxaV2k",
+                  "type": "text"
+                }
+              ],
+              "url": {
+                "raw": "http://localhost:8000/api/check/1",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "8000",
+                "path": [
+                  "api",
+                  "check",
 						"1"
 					]
 				},

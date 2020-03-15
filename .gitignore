@@ -1,4 +1,5 @@
 # Project exclude paths
 /venv/
-src/db.sqlite3
-src/employee_tracker/migrations
+/src/db.sqlite3
+/.idea
+/.idea/
